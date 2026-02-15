@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #111, #000);
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        lime,
+        cyan,
+        blue,
+        violet,
+        red
+    );
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rgbMove 6s linear infinite, fadeIn 1.5s ease forwards;
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+    transition: 0.3s;
+}
+
+h1:hover {
+    transform: scale(1.1);
+    text-shadow:
+        0 0 20px red,
+        0 0 40px blue,
+        0 0 60px lime;
+}
+
+@keyframes rgbMove {
+    0% { background-position: 0%; }
+    100% { background-position: 400%; }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
